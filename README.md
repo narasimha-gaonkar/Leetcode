@@ -1,2 +1,1 @@
-# Leetcode
-Collection of LeetCode questions to ace the coding interview! - Created using [LeetHub v2](https://github.com/arunbhardwaj/LeetHub-2.0)
+**Every line of code you write is a testament to your passion for problem-solving and your commitment to excellence.**
