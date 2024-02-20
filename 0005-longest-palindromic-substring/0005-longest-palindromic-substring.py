@@ -1,7 +1,6 @@
 class Solution:
     def longestPalindrome(self, s: str) -> str:
-        
-        
+                
         if len(s) == 1:
             return s
         
@@ -23,9 +22,6 @@ class Solution:
 
                 maxcount = count
                 palstring = s[l:r+1]
-                
-                
-        # print(maxcount, palstring)
         
         
         for idx in range(len(s)-1):
