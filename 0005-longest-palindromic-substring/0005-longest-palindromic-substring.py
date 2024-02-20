@@ -8,7 +8,6 @@ class Solution:
         for i in range(len(s)):
             dp[i][i] = True
             longestPalindrome = s[i]
-        # print(dp)
             
         for i in range(len(s)-1, -1, -1):
             
