@@ -18,7 +18,7 @@ class Solution:
                 count = 1 + solve(i-1, j-1)
             
             else:
-                count = count + max(solve(i-1, j), solve(i, j-1))
+                count = max(solve(i-1, j), solve(i, j-1))
             dp[i][j] = count
             
             return count
