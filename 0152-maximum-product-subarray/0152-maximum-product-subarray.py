@@ -12,12 +12,10 @@ class Solution:
         
         for i in range(n):
             
-            if prefix == 0: 
-                prefix = 1
+            if prefix == 0: prefix = 1
             prefix = prefix * nums[i]
             
-            if suffix == 0: 
-                suffix = 1
+            if suffix == 0: suffix = 1
             suffix = suffix * nums[n - i -1]
             
             maximum_num = max(maximum_num, prefix, suffix)
