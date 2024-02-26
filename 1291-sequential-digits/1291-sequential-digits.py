@@ -12,12 +12,10 @@ class Solution:
             
             last = num % 10
             
-            if last == 9:
-                continue
+            if last != 9:
+                queue.append(num * 10 + last + 1)
             
-            queue.append(num * 10 + last + 1)
-            
-        # print(res)
+
         return res
             
             
