@@ -9,11 +9,5 @@ class Solution:
                 sums -= i
             elif nums_map[i] == 1:
                 sums += i
-        return max(sums, 0)
-#         sums = 0
-        
-#         for ele in nums_map:
-#             if nums_map[ele] == 1:
-#                 sums += ele
-#         return sums
+        return sums
         
