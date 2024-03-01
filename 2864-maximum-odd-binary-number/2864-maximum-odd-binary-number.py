@@ -7,8 +7,6 @@ class Solution:
         
         res[-1] = '1'
         
-        # print(res)
-        
         if n == 1: return ''.join(res)
         
         for i in range(n-1):
