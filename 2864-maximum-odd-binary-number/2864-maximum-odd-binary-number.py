@@ -7,7 +7,7 @@ class Solution:
         
         res[-1] = '1'
         
-        print(res)
+        # print(res)
         
         if n == 1: return ''.join(res)
         
