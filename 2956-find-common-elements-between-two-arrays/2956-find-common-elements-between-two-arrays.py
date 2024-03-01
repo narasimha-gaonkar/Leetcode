@@ -13,7 +13,6 @@ class Solution:
             else:
                 hash[ele] = 1
             
-        print(hash)
         res = [0, 0]
         
         for ele in nums2:
@@ -21,7 +20,6 @@ class Solution:
                 res[1] = res[1] + 1
                 res[0] = res[0] + hash[ele]
                 hash[ele] = 0
-                # res.append(ele)
         return res
             
         
