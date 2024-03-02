@@ -8,6 +8,7 @@ class Solution:
     def sumOfLeftLeaves(self, root: Optional[TreeNode]) -> int:
         
         def solve(node, isLeft):
+            
             if not node:
                 return 0
             
