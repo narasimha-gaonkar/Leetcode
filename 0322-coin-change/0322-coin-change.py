@@ -4,9 +4,7 @@ class Solution:
         dp = [-1] * (amount+1) 
         dp[0] = 0
         
-        # for i in range(amount+1):
-        #     dp[i][0] = 0
-        
+
         for i in range(1, amount+1):
             min_coins = float('inf')
             for coin in coins:
@@ -15,8 +13,8 @@ class Solution:
                 
             dp[i] = min_coins if min_coins != float('inf') else -1
                 
-                
         return dp[amount]
+    
         #Recursive Approach
         '''
         dp = [-1] * (amount+1) 
