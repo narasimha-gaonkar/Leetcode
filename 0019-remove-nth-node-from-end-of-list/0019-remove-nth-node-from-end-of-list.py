@@ -18,7 +18,6 @@ class Solution:
             fast = fast.next
             slow = slow.next
         
-        #print(slow.next, fast.next)
         slow.next = slow.next.next
         
         return head
