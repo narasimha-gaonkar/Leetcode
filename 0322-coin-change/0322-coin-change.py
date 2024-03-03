@@ -19,6 +19,6 @@ class Solution:
             dp[n] = min_s
             return min_s
         solve(amount)
-        print(dp)
+
         return -1 if dp[amount] == float(inf) else dp[amount]
                 
