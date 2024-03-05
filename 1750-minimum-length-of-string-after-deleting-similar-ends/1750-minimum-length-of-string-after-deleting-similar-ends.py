@@ -5,7 +5,6 @@ class Solution:
         j = len(s) - 1
         
         while i < j:
-            print(i,j, s[i], s[j])
             
             if s[i] == s[j]:
                 if j - i == 1:
