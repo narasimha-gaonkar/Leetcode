@@ -10,7 +10,5 @@ class Solution:
         while fast and fast.next:
             
             slow = slow.next
-            if not fast.next:
-                return slow.next
             fast = fast.next.next
         return slow
