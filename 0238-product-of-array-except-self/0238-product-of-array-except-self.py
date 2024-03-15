@@ -4,19 +4,15 @@ class Solution:
         product_pre = product_post =  1
         n = len(nums)
         res = [1] * n
-        postfix_sum = [1] * n
-        prefix_sum = [1] * n
 
         
         for i in range(n):
-            prefix_sum[i] = product_pre
+            res[i] = product_pre
             product_pre *= nums[i]
-            
-            postfix_sum[n - i - 1] = product_post
-            product_post *= nums[n - i - 1]
-            
-        for i in range(n):
-            res[i] = postfix_sum[i] * prefix_sum[i]
+                        
+        for i in range(n-1, -1, -1):
+            res[i] = res[i] * product_post
+            product_post *= nums[i]
             
         return res
 
