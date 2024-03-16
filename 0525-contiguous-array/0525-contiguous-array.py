@@ -1,7 +1,6 @@
 class Solution:
     def findMaxLength(self, nums: List[int]) -> int:
         max_length = 0
-        length = 0
         
         count = 0
         
@@ -15,9 +14,8 @@ class Solution:
                 count += 1
             
             if count in hmap:
-                length = idx - hmap[count]
                 
-                max_length = max(length, max_length)
+                max_length = max(idx - hmap[count], max_length)
             else:
                 hmap[count] = idx
         
