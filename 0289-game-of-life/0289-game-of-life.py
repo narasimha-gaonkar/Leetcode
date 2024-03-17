@@ -25,18 +25,10 @@ class Solution:
                         summ += getGridValues(i+k, j+l)
                 
                 summ -= board[i][j]
-                # print(summ, i, j)
                 if board[i][j] == 0 and summ == 3:
                     board[i][j] = 1
-                elif board[i][j] == 1 and summ < 2:
-                    
-                    board[i][j] = 0
-                    # print('line 33',i, j, board[i][j])
                 elif board[i][j] == 1 and (summ == 2 or summ == 3):
                     board[i][j] = 1
-                    # print('line 36',i, j, board[i][j])
-                elif board[i][j] == 1 and summ > 3:
-                    board[i][j] = 0
                 else:
                     board[i][j] = 0
         return board
