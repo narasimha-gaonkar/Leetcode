@@ -5,10 +5,6 @@ class Solution:
         res = []
         x, y = newInterval
         
-        # intervals[0][0] = min(newInterval[0], intervals[0][0])
-        print(x, y)
-        
-        
         while intervals:
             start, end = intervals.pop(0)
             
@@ -26,11 +22,11 @@ class Solution:
             elif x <= end:
                 maxx = max(end, y)
                 minn = min(start, x)
-                print('line 10 ', maxx, start, end)
+                
                 while intervals and  maxx >= intervals[0][0]:
-                    print('line 12', intervals[0] , maxx)
+                    
                     maxx = max(intervals.pop(0)[1], maxx)
-                print('line 13', maxx, start, end)
+                    
                 res.append([minn, maxx])
                 
                 res.extend(intervals)
@@ -39,8 +35,7 @@ class Solution:
             else:
             
                 res.append([start, end])
-                print('else proper', res)
-        # else:
+
         res.append(newInterval)
         return res
             
