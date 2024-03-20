@@ -17,13 +17,13 @@ class Solution:
                 end_pointer = end_pointer.next
                 b -= 1
         
-        
         cur1.next = list2
         
         list2_end_pointer  = list2
         while cur1 and cur1.next:
             
             cur1 = cur1.next
+            
         cur1.next = end_pointer.next
         
         return list1
