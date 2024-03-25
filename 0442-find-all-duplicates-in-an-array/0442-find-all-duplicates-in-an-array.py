@@ -9,6 +9,6 @@ class Solution:
             if nums[idx] < 0:
                 duplicates.append(abs(num))
             else:
-                nums[idx] *= -1
+                nums[idx] = -nums[idx]
 
         return duplicates
