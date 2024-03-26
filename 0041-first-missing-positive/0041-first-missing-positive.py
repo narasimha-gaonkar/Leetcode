@@ -3,18 +3,16 @@ class Solution:
         
         n = len(nums)
         
-        i = 0
-        
         for i in range(n):
-            actual_pos = nums[i] - 1
-            
-            while nums[i] > 0 and nums[i] <= n and nums[i] != nums[actual_pos]:
-                nums[i], nums[actual_pos] = nums[actual_pos], nums[i]
-                actual_pos = nums[i] - 1 
-        # print(nums)
+            while 1 <= nums[i] and nums[i] <= n and nums[nums[i] - 1] != nums[i]:
+                nums[nums[i] - 1], nums[i] = nums[i], nums[nums[i] - 1]
+
+
         for i in range(n):
             if nums[i] != i + 1:
                 return i + 1
         
-        return len(nums) + 1
+        return n + 1
+        
+    
         
