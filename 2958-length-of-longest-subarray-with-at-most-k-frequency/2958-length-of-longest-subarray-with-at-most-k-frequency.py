@@ -2,7 +2,6 @@ class Solution:
     def maxSubarrayLength(self, nums: List[int], k: int) -> int:
         
         start = -1
-        end = 0
         res = 0
         
         freq = {}
