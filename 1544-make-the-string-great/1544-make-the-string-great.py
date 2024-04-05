@@ -4,7 +4,7 @@ class Solution:
         stack = []
         
         for letter in s:
-            if stack and letter.lower() == stack[-1].lower() and ord(letter) != ord(stack[-1]):
+            if stack and abs(ord(stack[-1]) - ord(letter)) == 32:
                 stack.pop()
             else:
                 stack.append(letter)
