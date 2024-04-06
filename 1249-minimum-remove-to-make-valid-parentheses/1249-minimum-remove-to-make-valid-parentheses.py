@@ -5,7 +5,6 @@ class Solution:
         close_removal = []
         
         for i in range(len(s)):
-            
             if s[i] == '(':
                 stack.append(i)
             elif s[i] == ')' and stack:
