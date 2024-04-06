@@ -12,11 +12,10 @@ class Solution:
                 stack.pop()
             elif s[i] == ')':
                 close_removal.append(i)
-                
+        stack.extend(close_removal)       
         for i in range(len(s)):
-            if i in stack or i in close_removal:
-                continue
-            res += s[i]
+            if i not in stack:
+                res += s[i]
             
         return res
                 
