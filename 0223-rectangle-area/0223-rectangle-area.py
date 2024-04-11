@@ -9,8 +9,6 @@ class Solution:
             
             y2 = min(ay2, by2)
             
-            # print(x1, y1, x2, y2)
-            
             area_a = max(0, ax2-ax1) * max(0, ay2-ay1)
             
             area_b = max(0, bx2-bx1) * max(0, by2-by1)
