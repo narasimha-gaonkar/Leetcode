@@ -16,7 +16,7 @@ class Solution:
             
             left_max[i] = l_max
             right_max[n - i - 1] = r_max
-        print(left_max, right_max)
+        # print(left_max, right_max)
         for i in range(n):
             res += abs(height[i] - min(left_max[i], right_max[i]))
         
