@@ -8,13 +8,15 @@ class Solution:
     def sumOfLeftLeaves(self, root: Optional[TreeNode]) -> int:
         
         def solve(node, isLeft):
-            
             if not node:
                 return 0
             
-            if node.left == None and node.right == None and isLeft:
+            if isLeft and node.left == None and node.right == None:
                 return node.val
             
-            return solve(node.left, True) + solve(node.right, False)
+            res = solve(node.left, True) + solve(node.right, False)
+            return res
+        a = solve(root, False)
+        print(a)
         
-        return solve(root, False)
+        return a
