@@ -16,7 +16,5 @@ class Solution:
             
             res = solve(node.left, True) + solve(node.right, False)
             return res
-        a = solve(root, False)
-        print(a)
         
-        return a
+        return solve(root, False)
