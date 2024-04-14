@@ -5,9 +5,7 @@ class Solution:
         
         unique_nums = list(freq.keys())
         n = len(unique_nums)
-        print(n)
         k = n - k
-        # print(freq)
         
         def quickSelect(l , r):
             pivot = freq[unique_nums[r]]
