@@ -9,11 +9,9 @@ class Solution:
         
         res = []
         def solve(node, cur_sum):
-            
             if not node:
                 return 0
             cur_sum = cur_sum * 10 + node.val
-            
             if node.left == None and node.right == None:
                 return cur_sum
         
