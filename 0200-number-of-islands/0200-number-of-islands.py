@@ -13,19 +13,14 @@ class Solution:
             return True
         
         def solve(i, j):
-            # isIsland = False
-            # print('line 17')
             dp[i][j] = True
             
             for dx, dy in steps:
-                
                 new_x = i + dx
                 new_y = j + dy
                 if val(new_x, new_y):
                     solve(new_x, new_y)
-            
             return
-        
         
         no_island = 0
         for i in range(m):
