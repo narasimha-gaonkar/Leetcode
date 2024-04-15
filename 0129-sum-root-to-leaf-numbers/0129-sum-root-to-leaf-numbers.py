@@ -7,7 +7,6 @@
 class Solution:
     def sumNumbers(self, root: Optional[TreeNode]) -> int:
         
-        res = []
         def solve(node, cur_sum):
             if not node:
                 return 0
