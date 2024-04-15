@@ -1,16 +1,17 @@
 class Solution:
     def productExceptSelf(self, nums: List[int]) -> List[int]:
-        
-        product_pre = product_post =  1
         n = len(nums)
-        res = [1] * n
-        
+        pre_product = [None]*n
+        pre = 1
         for i in range(n):
-            res[i] = product_pre
-            product_pre *= nums[i]
-                        
+            pre_product[i] = pre
+            pre *= nums[i]
+        pre = 1
+        
         for i in range(n-1, -1, -1):
-            res[i] = res[i] * product_post
-            product_post *= nums[i]
-        return res
+            pre_product[i] = pre * pre_product[i]
+            pre *= nums[i]
+        return pre_product
+        
+        
         
