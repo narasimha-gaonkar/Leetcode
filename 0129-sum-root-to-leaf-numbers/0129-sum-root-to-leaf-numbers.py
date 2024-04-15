@@ -10,14 +10,14 @@ class Solution:
         def solve(node, cur_sum):
             if not node:
                 return 0
-            cur_sum = cur_sum * 10 + node.val
+            cur_sum = cur_sum + str(node.val)
             if node.left == None and node.right == None:
-                return cur_sum
+                return int(cur_sum)
         
             cur_sum = solve(node.left, cur_sum) + solve(node.right, cur_sum)
             return cur_sum
         
-        return solve(root, 0)
+        return solve(root, '')
         
             
         
