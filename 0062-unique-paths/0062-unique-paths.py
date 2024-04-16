@@ -3,23 +3,16 @@ class Solution:
         
         dp = [[-1] * n for _ in range(m)]
         
-        def solve(i , j):
-            
-            if i == m - 1 and j == n-1:
-                return 1
-            
-            if i >= m or j >= n:
-                return 0
-            
-            if dp[i][j] != -1:
-                return dp[i][j]
-            
-            count = 0
-            
-            count = solve(i + 1, j) + solve(i, j + 1)
-            
-            dp[i][j] = count
-            
-            return count
-                    
-        return solve(0, 0)
+        dp[0][0] = 1
+        
+        for i in range(m):
+            for j in range(n):
+                if i == 0 and j == 0:
+                    continue
+                up, left = 0, 0
+                if i > 0:
+                    up = dp[i-1][j]
+                if j > 0:
+                    left = dp[i][j-1]
+                dp[i][j] = up + left
+        return dp[m-1][n-1]
