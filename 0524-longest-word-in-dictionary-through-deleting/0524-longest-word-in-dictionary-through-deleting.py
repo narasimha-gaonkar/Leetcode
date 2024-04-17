@@ -6,10 +6,11 @@ class Solution:
         dictionary = set(dictionary)
         
         for word_c in dictionary:
-            if len(word_c) > n:
+            k = len(word_c)
+            if k > n:
                 continue
             i = 0
-            k = len(word_c)
+            
             for letter in word_c:
                 while i < n:
                     if letter == s[i]:
