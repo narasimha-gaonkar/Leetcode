@@ -7,7 +7,7 @@ class Solution:
         
         for word_c in dictionary:
             k = len(word_c)
-            if k > n:
+            if k > n or (len(word_c) == len(max_length_str) and word_c > max_length_str):
                 continue
             i = 0
             
