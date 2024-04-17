@@ -6,6 +6,8 @@ class Solution:
         dictionary = set(dictionary)
         
         for word_c in dictionary:
+            if len(word_c) > n:
+                continue
             i = 0
             k = len(word_c)
             for letter in word_c:
