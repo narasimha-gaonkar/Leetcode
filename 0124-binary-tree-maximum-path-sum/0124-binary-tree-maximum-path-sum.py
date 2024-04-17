@@ -12,10 +12,8 @@ class Solution:
             if not node:
                 return 0
             
-            lsum = solve(node.left)
-            lsum = max(0, lsum)
-            rsum = solve(node.right)
-            rsum = max(0, rsum)
+            lsum = max(0, solve(node.left))
+            rsum = max(0, solve(node.right))
             max_sum = max(max_sum, lsum + rsum + node.val)
             return node.val + max(lsum, rsum)
             
