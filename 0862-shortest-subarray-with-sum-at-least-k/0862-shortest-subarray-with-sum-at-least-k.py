@@ -8,7 +8,7 @@ class Solution:
         
         for num in nums:
             prefix_sum.append(prefix_sum[-1] + num)
-        # print(prefix_sum)
+
         dq = deque()
         
         for i in range(n + 1):
