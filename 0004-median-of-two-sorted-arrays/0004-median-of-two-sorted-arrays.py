@@ -25,13 +25,13 @@ class Solution:
         if (m + n) % 2 == 1:
             count += 1
             
-            for _ in range(count):
-                ans = get_min()
-            return ans
+            for _ in range(count-1):
+                get_min()
+            return get_min()
         else:
-            for _ in range(count):
-                ans = get_min()
-            return (ans + get_min()) / 2
+            for _ in range(count-1):
+                get_min()
+            return (get_min() + get_min()) / 2
         
         
         
