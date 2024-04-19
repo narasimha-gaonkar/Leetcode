@@ -31,7 +31,6 @@ class Solution:
         else:
             for _ in range(count):
                 ans = get_min()
-                print(ans)
             return (ans + get_min()) / 2
         
         
