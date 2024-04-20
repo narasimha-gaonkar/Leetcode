@@ -22,10 +22,7 @@ class Solution:
             
             for dx, dy in steps:
                 if val(i + dx, j + dy):
-                    tmp_max_x, tmp_max_y =  solve(i + dx, j + dy, max_i, max_j)
-                    
-                    max_i = max(max_i, tmp_max_x)
-                    max_j = max(max_j, tmp_max_y)
+                    max_i, max_j =  solve(i + dx, j + dy, max_i, max_j)
                     
             return [max_i, max_j]
                     
