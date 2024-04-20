@@ -4,7 +4,7 @@ class Solution:
         res = []
         m = len(land)
         n = len(land[0])
-        steps = [(0, 1), (1, 0), (0, -1), (-1, 0)]
+        steps = [(0, 1), (1, 0)]
         
         dp = [ [False] * n for _ in range(m)]
         
