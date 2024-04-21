@@ -16,15 +16,16 @@ class Solution:
             return False
         
         def solve(i):
-
+            if i == destination:
+                return True
             visited[i] = True
-            
             for transition in dp[i]:
                 if not visited[transition]:
-                    solve(transition)
-            return visited[i]
-        solve(source)
-        return visited[destination]
+                    if solve(transition):
+                        return True
+            return False
+        return solve(source)
+        
             
             
             
