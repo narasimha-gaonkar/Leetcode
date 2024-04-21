@@ -6,11 +6,11 @@ class Solution:
         
         visited = [False] * n
         
-        dp = defaultdict(set)
+        dp = defaultdict(list)
         
         for x, y in edges:
-            dp[x].add(y)
-            dp[y].add(x)
+            dp[x].append(y)
+            dp[y].append(x)
         
         if source not in dp or destination not in dp:
             return False
