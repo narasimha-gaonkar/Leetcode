@@ -3,20 +3,14 @@ class Solution:
         
         if source == destination:
             return True
+        
         visited = [False] * n
         
-        dp = {}
+        dp = defaultdict(set)
         
         for x, y in edges:
-            if x in dp:
-                dp[x].append(y)
-            else:
-                dp[x] = [y]
-                
-            if y in dp:
-                dp[y].append(x)
-            else:
-                dp[y] = [x]
+            dp[x].add(y)
+            dp[y].add(x)
         
         if source not in dp or destination not in dp:
             return False
@@ -27,11 +21,9 @@ class Solution:
             
             for transition in dp[i]:
                 if not visited[transition]:
-                    # print(i, '=>',transition)
                     solve(transition)
             return visited[i]
         solve(source)
-        # print(visited)
         return visited[destination]
             
             
