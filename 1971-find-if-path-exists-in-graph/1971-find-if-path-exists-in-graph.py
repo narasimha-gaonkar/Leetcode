@@ -4,7 +4,7 @@ class Solution:
         if source == destination:
             return True
         
-        visited = [False] * n
+        visited = defaultdict(bool)
         
         dp = defaultdict(list)
         
