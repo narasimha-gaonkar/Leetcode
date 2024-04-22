@@ -2,9 +2,7 @@ class Solution:
     def openLock(self, deadends: List[str], target: str) -> int:
         deadends = set(deadends)
         
-        if deadends == target:
-            return -1
-        if '0000' in deadends:
+        if deadends == target or '0000' in deadends:
             return -1
         
         queue = deque(['0000'])
