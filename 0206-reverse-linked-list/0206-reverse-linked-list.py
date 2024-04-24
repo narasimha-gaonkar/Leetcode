@@ -8,11 +8,15 @@ class Solution:
         
         prev = None
         cur = head
-
+        
         while cur:
-            nextt = cur.next 
+            
+            nextt = cur.next
+            
             cur.next = prev
+            
             prev = cur
+            
             cur = nextt
-
+        
         return prev
