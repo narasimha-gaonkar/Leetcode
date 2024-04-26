@@ -1,16 +1,14 @@
 class Solution:
     def minFallingPathSum(self, grid: List[List[int]]) -> int:
         
+        n = len(grid)
         
-        m = len(grid)
-        n = len(grid[0])
-        
-        dp = [[None] * n for _ in range(m)]
+        dp = [[None] * n for _ in range(n)]
         
         for i in range(n):
             dp[0][i] = grid[0][i]
         
-        for i in range(1, m):
+        for i in range(1, n):
             for j in range(n):
                 option = float(inf)
                 if j == 0:
@@ -22,6 +20,6 @@ class Solution:
                     
                 dp[i][j] = grid[i][j] + option
                 
-        return min(dp[m-1])
+        return min(dp[n-1])
             
             
