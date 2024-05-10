@@ -3,33 +3,35 @@ class Solution:
         """
         Do not return anything, modify board in-place instead.
         """
-        visited = {}
+        
         
         m = len(board)
         n = len(board[0])
         
-        def getGridValues(x, y):
-            if x < m and y < n and x >= 0 and y >= 0:
-                if (x, y) in visited:
-                    return visited[(x, y)]
-                return board[x][y]
-            return 0
-        
-        
         for i in range(m):
             for j in range(n):
-                visited[(i, j)] = board[i][j]
-                summ = 0
-                for k in range(-1, 2):
-                    for l in range(-1, 2):
-                        summ += getGridValues(i+k, j+l)
                 
-                summ -= board[i][j]
-                if board[i][j] == 0 and summ == 3:
-                    board[i][j] = 1
-                elif board[i][j] == 1 and (summ == 2 or summ == 3):
-                    board[i][j] = 1
-                else:
+                res = 0
+                
+                for dx in [-1, 0, 1]:
+                    for dy in [-1, 0, 1]:
+                        
+                        if not (dx == 0 and dy == 0) and  0 <= i + dx < m and 0 <= j + dy < n:
+                            if board[i+dx][j+dy] == 1 or board[i+dx][j+dy] == '#':
+                                res += 1
+                
+                if board[i][j] == 1 and res < 2:
+                    board[i][j] = '#'
+                elif board[i][j] == 1 and res > 3:
+                    board[i][j] = '#'
+                elif board[i][j] == 0 and res == 3:
+                    board[i][j] = '*'
+        for i in range(m):
+            for j in range(n):
+                if board[i][j] == '#':
                     board[i][j] = 0
+                elif board[i][j] == '*':
+                    board[i][j] = 1
         return board
+                
         
