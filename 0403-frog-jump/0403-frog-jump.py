@@ -4,7 +4,6 @@ class Solution:
         n_len = len(stones)
         target = stones[-1]
         
-        
         @cache
         def solve(pos, k):
             if k <= 0:
@@ -16,8 +15,6 @@ class Solution:
             if pos == target:
                 return True
             
-            res = solve(pos + k + 1, k + 1) or solve(pos + k, k) or solve(pos + k - 1, k - 1)
-            
-            return res
+            return solve(pos + k + 1, k + 1) or solve(pos + k, k) or solve(pos + k - 1, k - 1)
         
         return solve(1, 1)
