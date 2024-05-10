@@ -4,7 +4,6 @@ class Solution:
         Do not return anything, modify board in-place instead.
         """
         
-        
         m = len(board)
         n = len(board[0])
         
@@ -26,12 +25,14 @@ class Solution:
                     board[i][j] = '#'
                 elif board[i][j] == 0 and res == 3:
                     board[i][j] = '*'
+        
         for i in range(m):
             for j in range(n):
                 if board[i][j] == '#':
                     board[i][j] = 0
                 elif board[i][j] == '*':
                     board[i][j] = 1
+        
         return board
                 
         
