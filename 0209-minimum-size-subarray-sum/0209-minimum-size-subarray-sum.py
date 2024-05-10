@@ -9,7 +9,6 @@ class Solution:
             prefix_sum += nums[i]
             
             while prefix_sum >= target:
-                print(prefix_sum,i, l)
                 if prefix_sum >= target:
                     min_length = min(i - l + 1, min_length)
                 prefix_sum -= nums[l]
