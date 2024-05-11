@@ -4,14 +4,15 @@ class Solution:
         dx, dy = 0, 1
         x, y = 0, 0
         
-        for ins in instructions:
-            if ins == 'G':
+        for direction in instructions:
+            if direction == 'L':
+                dx, dy = -dy, dx
+            elif direction == 'R':
+                dx, dy = dy, -dx
+            else:
                 x += dx
                 y += dy
-            elif ins == 'L':
-                dx, dy = -dy, dx
-            else:
-                dx, dy = dy, -dx
+        
+        # print(x, y)
+        
         return (x, y) == (0, 0) or (dx, dy) != (0, 1)
-                
-            
