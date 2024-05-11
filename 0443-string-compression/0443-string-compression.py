@@ -1,25 +1,27 @@
 class Solution:
     def compress(self, chars: List[str]) -> int:
-        
-        i = j = 0
-        while i < len(chars):
-            count = 1
-            
-            while i < len(chars) - 1 and chars[i] == chars[i + 1]:
+        chars.append('*')
+        prev = chars[0]
+        left = 0
+        count = 1
+        for i in range(1, len(chars)):
+            if chars[i] == prev:
                 count += 1
-                i += 1
-            
-            chars[j] = chars[i]
-            j += 1
-            i += 1
-            
-            if count > 1:
-                for k in str(count):
-                    chars[j] = k
-                    j +=1
-        return j
-            
-            
+            else:
+                chars[left] = prev
+                left += 1
+                if count > 1:  # Compression needed
+                    if count < 10:
+                        chars[left] = str(count)
+                        left += 1
+                    else:
+                        # Handling counts >= 10
+                        for k in str(count):
+                            chars[left] = k
+                            left += 1
+                count = 1
+            prev = chars[i]
+        return left
                         
                     
                 
