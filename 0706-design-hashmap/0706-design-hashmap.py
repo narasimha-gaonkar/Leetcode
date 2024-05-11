@@ -3,7 +3,6 @@ class MyHashMap:
     def __init__(self):
         
         self.size = 1000
-        
         self.buckets = [None] * self.size
         
 
@@ -11,42 +10,41 @@ class MyHashMap:
         
         hash_key = key % self.size
         
-        if self.buckets[hash_key] is None:
-
+        if self.buckets[hash_key] == None:
+            
             self.buckets[hash_key] = []
         
         for idx, (k, v) in enumerate(self.buckets[hash_key]):
-            
             if k == key:
-                self.buckets[hash_key][idx] = (k, value)
+                self.buckets[hash_key][idx] = (k ,value)
                 return
         
         self.buckets[hash_key].append((key, value))
+        return
+        
         
 
     def get(self, key: int) -> int:
+        
         hash_key = key % self.size
         
-        if self.buckets[hash_key] is None:
+        if self.buckets[hash_key] == None:
             return -1
         
         for k, v in self.buckets[hash_key]:
             if k == key:
                 return v
         return -1
+        
 
     def remove(self, key: int) -> None:
-        
         hash_key = key % self.size
+        if self.get(key) != -1:
+            for k, v in self.buckets[hash_key]:
+                if k == key:
+                    self.buckets[hash_key].remove((k, v))
+                
         
-        if not self.buckets[hash_key]:
-            return 
-        
-        for idx, (k, v) in enumerate(self.buckets[hash_key]):
-            
-            if k == key:
-                del self.buckets[hash_key][idx]
-                return 
 
 
 # Your MyHashMap object will be instantiated and called as such:
