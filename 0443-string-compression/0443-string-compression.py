@@ -10,15 +10,10 @@ class Solution:
             else:
                 chars[left] = prev
                 left += 1
-                if count > 1:  # Compression needed
-                    if count < 10:
-                        chars[left] = str(count)
+                if count > 1:  
+                    for k in str(count):
+                        chars[left] = k
                         left += 1
-                    else:
-                        # Handling counts >= 10
-                        for k in str(count):
-                            chars[left] = k
-                            left += 1
                 count = 1
             prev = chars[i]
         return left
