@@ -4,6 +4,25 @@ class Solution:
         m = len(grid)
         n = len(grid[0])
         
+        dp = [[0] * n for _ in range(m)]
+        dp[0][0] = grid[0][0]
+        
+        for i in range(m):
+            for j in range(n):
+                if i == 0 and j == 0:
+                    continue
+                    
+                up = left = float(inf)
+                
+                if i > 0:
+                    up = grid[i][j] + dp[i-1][j]
+                if j > 0:
+                    left = grid[i][j] + dp[i][j-1]
+                dp[i][j] = min(up, left)
+        
+        return dp[m-1][n-1]
+        
+        
         @cache
         def solve(i, j):
             
