@@ -16,7 +16,6 @@ class Solution:
                 dp[i] += dp[i-1]
                 
             #check if we can form a letter using previos and current char
-            # print(int(s[i-1]), int(s[i-2:i]))
             
             if 10 <= int(s[i-2:i]) <= 26:
                 dp[i] += dp[i-2]
