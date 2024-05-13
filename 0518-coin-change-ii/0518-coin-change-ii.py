@@ -13,10 +13,9 @@ class Solution:
                 notpick = dp[i][j-1] if j >= 1 else 0
                 pick = 0
                 if i - coins[j] >= 0:
-                    pick = dp[i - coins[j]][j] if i - coins[j] >= 0 else 0
+                    pick = dp[i - coins[j]][j]
                 
                 dp[i][j] = notpick + pick 
-        # print(dp)       
         return dp[m-1][n-1]
         
         
