@@ -26,5 +26,5 @@ class Solution:
         
         y_parent, y_depth = solve(root, y, None, 0)
         
-        print(x_parent, x_depth, y_parent, y_depth )
+        # print(x_parent, x_depth, y_parent, y_depth )
         return x_depth == y_depth and x_parent != y_parent
