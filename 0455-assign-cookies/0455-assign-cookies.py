@@ -12,8 +12,6 @@ class Solution:
             if s[idx] >= g[i]:
                 count += 1
                 i+=1
-                idx += 1
-            else:
-                idx+= 1
+            idx += 1
         return count
             
