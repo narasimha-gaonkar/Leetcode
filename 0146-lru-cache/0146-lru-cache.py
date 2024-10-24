@@ -14,12 +14,10 @@ class LRUCache:
         self.head.next = self.tail
         self.tail.prev = self.head
         
-
     def get(self, key: int) -> int:
         
         if key in self.mapping:
             value = self.mapping[key].value
-            
             self.update_dll(key)
             return value
         return -1
@@ -32,11 +30,11 @@ class LRUCache:
             if len(self.mapping) == self.capacity:
                 self.remove_node(self.tail.prev.key)
             self.insert_node_start(key, value)
-        
     
     def remove_node(self, key):
         node = self.mapping[key]
         del self.mapping[key]
+        
         prev = node.prev
         nextt = node.next
         
@@ -48,20 +46,14 @@ class LRUCache:
         
         first = self.head.next
         self.head.next = new_node
-        
         new_node.prev = self.head
         new_node.next = first
-        
         first.prev = new_node
-        
         self.mapping[key] = new_node
-        
     
     def update_dll(self, key) -> None:
         node = self.mapping[key]
-        
         self.remove_node(key)
-        
         self.insert_node_start(node.key, node.value)
         
 
