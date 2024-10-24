@@ -1,6 +1,12 @@
 class Solution:
     def minimumOperations(self, nums: List[int]) -> int:
         snum = list(set(nums))
+        if len(snum) == 1 and snum[0] == 0:
+            return 0
+        elif snum[0] == 0:
+            return len(snum) - 1
+        else:
+            return len(snum)
         
         prevSum = 0
         
